@@ -30,13 +30,14 @@ class Pedido
     private $cliente;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Producto", mappedBy="pedidos")
+     * @ORM\OneToMany(targetEntity="App\Entity\PedidoProductoCantidad", mappedBy="pedido")
      */
-    private $productos;
+    private $pedidoproductocantidades;
 
     public function __construct()
     {
         $this->productos = new ArrayCollection();
+        $this->pedidoproductocantidades = new ArrayCollection();
     }
 
     public function getId()
@@ -69,28 +70,31 @@ class Pedido
     }
 
     /**
-     * @return Collection|Producto[]
+     * @return Collection|PedidoProductoCantidad[]
      */
-    public function getProductos(): Collection
+    public function getPedidoproductocantidades(): Collection
     {
-        return $this->productos;
+        return $this->pedidoproductocantidades;
     }
 
-    public function addProducto(Producto $producto): self
+    public function addPedidoproductocantidade(PedidoProductoCantidad $pedidoproductocantidade): self
     {
-        if (!$this->productos->contains($producto)) {
-            $this->productos[] = $producto;
-            $producto->addPedido($this);
+        if (!$this->pedidoproductocantidades->contains($pedidoproductocantidade)) {
+            $this->pedidoproductocantidades[] = $pedidoproductocantidade;
+            $pedidoproductocantidade->setPedido($this);
         }
 
         return $this;
     }
 
-    public function removeProducto(Producto $producto): self
+    public function removePedidoproductocantidade(PedidoProductoCantidad $pedidoproductocantidade): self
     {
-        if ($this->productos->contains($producto)) {
-            $this->productos->removeElement($producto);
-            $producto->removePedido($this);
+        if ($this->pedidoproductocantidades->contains($pedidoproductocantidade)) {
+            $this->pedidoproductocantidades->removeElement($pedidoproductocantidade);
+            // set the owning side to null (unless already changed)
+            if ($pedidoproductocantidade->getPedido() === $this) {
+                $pedidoproductocantidade->setPedido(null);
+            }
         }
 
         return $this;

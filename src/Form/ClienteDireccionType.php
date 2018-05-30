@@ -7,7 +7,6 @@ use App\Entity\Cliente;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class ClienteDireccionType extends AbstractType
 {

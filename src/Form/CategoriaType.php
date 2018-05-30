@@ -15,6 +15,7 @@ class CategoriaType extends AbstractType
     {
         $builder
             ->add('nombre')
+            ->add('productos')
         ;
     }
 

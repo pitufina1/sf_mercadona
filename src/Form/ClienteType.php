@@ -9,7 +9,6 @@ use App\Entity\ClienteDireccion;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class ClienteType extends AbstractType
 {
@@ -21,6 +20,8 @@ class ClienteType extends AbstractType
             ->add('email')
             ->add('contrasena')
             ->add('cp')
+            ->add('pedidos')
+            ->add('clientesdireciones')
         ;
     }
 
