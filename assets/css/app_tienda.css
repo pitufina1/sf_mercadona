@@ -1,0 +1,17 @@
+header>div.alert {
+	margin-top: 20px;
+	text-align: center;
+	text-decoration: underline; 
+}
+
+header .navbar-nav a:first-child {
+	margin-left: 40px;
+}
+
+header .navbar-nav a {
+    color: #229e6b;
+}
+
+header .navbar-nav a:last-child {
+	margin-right: 300px;
+}
