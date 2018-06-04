@@ -13,7 +13,7 @@ Encore
     .addEntry('midatatable', './assets/js/midatatable.js')
 
     .addStyleEntry('appstyle', './assets/css/app.css')
-
+    .addStyleEntry('tienda', './assets/css/app_tienda.css')
 
     // allow legacy applications to use $/jQuery as a global variable
     .autoProvidejQuery()
