@@ -24,6 +24,7 @@ body {
 
 div.fondoimagen {
 	background-image: url(https://www.mercadona.es/img/header-medium.088535.jpg);
+	background-size: cover;
 	color: white;
 	font-family: PT Serif;
 	font-weight: 600px;
