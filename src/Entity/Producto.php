@@ -44,6 +44,11 @@ class Producto
      */
     private $pedidoproductocantidades;
 
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    private $url;
+
     public function __construct()
     {
         $this->pedidos = new ArrayCollection();
@@ -130,6 +135,18 @@ class Producto
                 $pedidoproductocantidade->setProducto(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getUrl(): ?string
+    {
+        return $this->url;
+    }
+
+    public function setUrl(string $url): self
+    {
+        $this->url = $url;
 
         return $this;
     }

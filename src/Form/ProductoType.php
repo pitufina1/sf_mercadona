@@ -17,12 +17,12 @@ class ProductoType extends AbstractType
             ->add('nombre')
             ->add('descripcion')
             ->add('precio')
+            ->add('url')
             ->add('categoria',EntityType::class,array(
                 'class' => Categoria::class,
                 'choice_label' => function ($categoria) {
                     return $categoria->getNombre();
             }))
-            ->add('pedidoproductocantidades')
         ;
     }
 

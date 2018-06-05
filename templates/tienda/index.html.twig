@@ -2,6 +2,47 @@
 
 {% block body %}
 
-	
+<!-- LIDIA está haciendo la imagen-->
+
+<div class="container">
+    <div class="row">
+      <div class="col">
+          <h1>Nos reinventamos contigo</h1>
+      <button class="btn btn-primary">Ver productos</button>
+      </div>
+      <div class="col">
+        <img src="https://storage.googleapis.com/itg_statics_mimercadona/media/seasons/banners/banner_healthy.jpg"  height="400" class="d-inline-block align-top" alt=""> 
+      </div>
+  </div>
+</div> 
+
+
+<!-- PRIMERA FILA DE PRODUCTOS-->
+<h3> Novedades </h3>
+
+
+<div class="card-group container">
+	<div class="row">
+	{% for producto in productos %}
+		<div class="col-1-5">  
+		<div class="card">
+			<img class="card-img-top" alt="" src="imagenes/imagen1.jpg{{producto.url}}">
+			<div class="card-body">
+		      <p class="card-text"> {{producto.nombre}}  </p>
+		      <p class="card-text"><small class="text-muted"> {{producto.descripcion}}  </small></p>
+		      <p class="card-text"><small class="text-muted"><strong> {{producto.precio}} €</strong>/ud </small></p>
+					<hr> 
+				<button type="button" class="btn btn-outline-warning"> Añadir al carro </button>
+			</div>
+			</div>
+		</div>
+{% endfor %}
+
+	</div>
+</div>
+
+
+
+<a href="{{ path('categoria_new') }}"> Añadir categoría </a>
 
 {% endblock %}

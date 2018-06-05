@@ -17,18 +17,9 @@ use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 class TiendaController extends Controller
 {
 
-    /**
-     * @Route("/", name="tienda_home")
-     */
-    public function cargarTiendaHome()
-    {
-        return $this->render('tienda/index.html.twig', [
-            'controller_name' => 'MainController',
-        ]);
-    }
 
  	/**
-     * @Route("/lista", name="tienda_producto")
+     * @Route("/", name="tienda_home")
      */
     public function listadoProductos()
     {
@@ -38,7 +29,6 @@ class TiendaController extends Controller
             'productos' =>  $productos,
         ]);
     }
-
 
 	/**
      * @Route("/jsonlist", name="tienda_jsonlist")

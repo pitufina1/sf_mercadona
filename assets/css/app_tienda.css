@@ -47,9 +47,11 @@ header .navbar-nav a:last-child {
     background-color: rgba(252,184,49,.4);
 }
 
+.card-group .row .col-1-5 {
+	width: 20%;
+}
 
 
-lidia
 header > nav > div:last-child{
 
 

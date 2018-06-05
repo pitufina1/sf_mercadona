@@ -35,49 +35,7 @@
  			</div>
 	</nav>
 
-
-<!-- LIDIA está haciendo la imagen-->
-
-<div class="container">
-    <div class="row">
-      <div class="col">
-          <h1>Nos reinventamos contigo</h1>
-      <button class="btn btn-primary">Ver productos</button>
-      </div>
-      <div class="col">
-        <img src="https://storage.googleapis.com/itg_statics_mimercadona/media/seasons/banners/banner_healthy.jpg"  height="400" class="d-inline-block align-top" alt=""> 
-      </div>
-  </div>
-</div> 
-
-
-<!-- PRIMERA FILA DE PRODUCTOS-->
-<h3> Novedades </h3>
-
-<div class="card-group">
-
-{% for producto in productos %}
-  <div class="card">
-    <img class="card-img-top" alt="Ensalada mezcla con flores" src="https://prod-mercadona.imgix.net/20180601/16/69416/69416_00_07.jpg?fit=crop&amp;h=206&amp;w=206" alt="Card image cap">
-    <div class="card-body">
-      <p class="card-text"> Ensalada mixta con flores </p>
-      <p class="card-text"><small class="text-muted"> Bol 70 gr. </small></p>
-      <p class="card-text"><small class="text-muted"><strong> {{p.precio}}1,45 €</strong>/ud </small></p>
-      <hr> </hr>
-      <button type="button" class="btn btn-outline-warning"> Añadir al carro </button>
-    </div>
-  </div>
- 
-
-</div>
-{% endfor %}
 {% endblock %}
-
-
-
-
-
-
 
 
 {% block footer %}
