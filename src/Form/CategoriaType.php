@@ -15,7 +15,13 @@ class CategoriaType extends AbstractType
     {
         $builder
             ->add('nombre')
-            ->add('productos')
+            ->add('productos',EntityType::class,array(
+                'class' => Producto::class,
+                'choice_label' => function ($producto) {
+                    return $producto->getNombre();
+            }))
+
+
         ;
     }
 

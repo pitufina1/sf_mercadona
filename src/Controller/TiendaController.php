@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Producto;
+use App\Entity\Categoria;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -27,6 +28,33 @@ class TiendaController extends Controller
         $productos = $repo->findAll();
             return $this->render ('tienda/index.html.twig', [
             'productos' =>  $productos,
+        ]);
+    }
+
+     /**
+     * @Route("/detalle/{id}", name="tienda_show", requirements={"id"="\d+"})
+     */
+    public function detalleProducto($id)
+    {
+        $repo = $this->getDoctrine()->getRepository(Producto::class);
+        
+        $producto = $repo->find($id);
+                   
+            return $this->render ('tienda/detalle.html.twig', [
+            'producto' =>  $producto,
+        ]);
+    }
+
+
+    /**
+     * @Route("/", name="tienda_categoria")
+     */
+    public function listadoCategorias()
+    {
+        $repo = $this->getDoctrine()->getRepository(Categoria::class);
+        $categorias = $repo->findAll();
+            return $this->render ('tienda/index.html.twig', [
+            'categorias' =>  $categorias,
         ]);
     }
 

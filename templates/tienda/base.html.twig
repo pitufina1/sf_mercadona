@@ -12,19 +12,18 @@
    		<a class="navbar-brand" href="#">
    			<img src="https://www.mercadona.com/estaticos/images/mercadona_logo/es/mercadona-imagotipo-color-300.png"  height="30" class="d-inline-block align-top" alt=""></a>  
 
-   		
-
-
       <!-- poner un FORM-->
+
 
    		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
    			<div class="navbar-nav navbar-custom">
-     			<form class="form-inline" id="tienda" {#action="{{ path('recibir_formulario') }}" method="post"#}>
+     			<form class="form-inline" id="tienda">
             <div class="form-group-inline mx-sm-3 mb-2"> 
               <i class="fas fa-search"></i><input type="Buscar productos" class="form-control" id="inputPassword2" placeholder="Buscar productos" name="cp">
               <label for="inputPassword2" class="sr-only"><i class="fas fa-search"></i> Buscar productos </label>
             </div>
-          <a class="nav-item nav-link" href="#"> Categorías </a>
+          </form>
+          <a class="nav-item nav-link" href="{{ path('categoria_index') }}" method="post"> Categorías </a>
      			<a class="nav-item nav-link" href="#"> Mis Habituales </a>
    			</div>
    			<span class="navbar-text">

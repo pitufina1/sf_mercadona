@@ -4,6 +4,7 @@ namespace App\Controller;
 
 
 use App\Entity\Categoria;
+use App\Entity\Tienda;
 use App\Form\CategoriaType;
 use App\Repository\CategoriaRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
