@@ -1,4 +1,6 @@
-{% extends 'tienda/base.html.twig' %}
+{% extends 'tienda/_base.html.twig' %}
+
+
 
 {% block body %}
 
@@ -20,28 +22,35 @@
 <!-- PRIMERA FILA DE PRODUCTOS-->
 <h3> Novedades </h3>
 
+	
 
 <div class="card-group container">
 	<div class="row">
 	{% for producto in productos %}
 		<div class="col-1-5">  
-		<div class="card">
-			<img class="card-img-top" alt="" src="imagenes/imagen1.jpg {{producto.url}}">
-			<div class="card-body">
-		      <p class="card-text"> {{producto.nombre}}  </p>
-		      <p class="card-text"><small class="text-muted"> {{producto.descripcion}}  </small></p>
-		      <p class="card-text"><small class="text-muted"><strong> {{producto.precio}} €</strong>/ud </small></p>
-					<hr> 
-				<button type="button" class="btn btn-outline-warning"> Añadir al carro </button>
-			</div>
+			<div class="card">
+				<input type="hidden" name="" value="{{ producto.id }}">
+				<img class="card-img-top" alt="" src="{{producto.url}}">
+				<div class="card-body">
+			      <p class="card-text"> {{producto.nombre}} </p>
+			      <p class="card-text"><small class="text-muted"> {{producto.descripcion}}  </small></p>
+			      <p class="card-text"><small class="text-muted"><strong> {{producto.precio}} €</strong>/ud </small></p>
+						<hr> 
+					<button type="button" class="btn btn-outline-warning"> Añadir al carro </button>
+
+				</div>
 			</div>
 		</div>
-{% endfor %}
+
+	
+		
+	{% endfor %}
 
 	</div>
 </div>
 
-
 <a href="{{ path('categoria_new') }}"> Añadir categoría </a>
+
+{% include 'tienda/_modal.html.twig' %}
 
 {% endblock %}

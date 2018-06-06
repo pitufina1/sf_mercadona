@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-
 use App\Entity\Categoria;
 use App\Entity\Tienda;
 use App\Form\CategoriaType;

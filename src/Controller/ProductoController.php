@@ -10,6 +10,12 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\Serializer\Serializer;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+
+
 /**
  * @Route("/producto")
  */
@@ -86,5 +92,29 @@ class ProductoController extends Controller
         }
 
         return $this->redirectToRoute('producto_index');
+    }
+
+    /**
+     * @Route("/{id}/json", name="producto_json", requirements={"id"="\d+"})
+     */
+    public function jsonProducto($id, Request $request)
+    {
+        $encoder = new JsonEncoder();
+        $normalizer = new ObjectNormalizer();
+        $normalizer->setCircularReferenceHandler(
+            function ($object) {
+                return $object->getId();
+            }
+        );
+
+        $serializer = new Serializer(array($normalizer), array($encoder));
+
+        $repo = $this->getDoctrine()->getRepository(Producto::class);
+        $producto = $repo->find($id);
+        $jsonProducto = $serializer->serialize($producto, 'json');        
+
+        $respuesta = new Response($jsonProducto);
+
+        return $respuesta;
     }
 }
