@@ -14,15 +14,16 @@
 
       <!-- poner un FORM-->
 
+
    		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
    			<div class="navbar-nav navbar-custom">
-     			<form class="form-inline" id="tienda" href="{{ path('recibir_formulario') }}" method="post">
+     			<form class="form-inline" id="tienda">
             <div class="form-group-inline mx-sm-3 mb-2"> 
               <i class="fas fa-search"></i><input type="Buscar productos" class="form-control" id="inputPassword2" placeholder="Buscar productos" name="cp">
               <label for="inputPassword2" class="sr-only"><i class="fas fa-search"></i> Buscar productos </label>
             </div>
           </form>
-          <a class="nav-item nav-link" href="{{ path('tienda_categoria') }}" method="post"> Categorías </a>
+          <a class="nav-item nav-link" href="{{ path('categoria_index') }}" method="post"> Categorías </a>
      			<a class="nav-item nav-link" href="#"> Mis Habituales </a>
    			</div>
    			<span class="navbar-text">

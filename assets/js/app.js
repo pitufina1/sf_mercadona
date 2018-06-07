@@ -21,13 +21,16 @@ $(document).ready (function () {
 			    dataType: "json",
 			    success: function (datos) { 
 			    	//Rellenar el modal con los datos
-			    	$('#myModal p.....').text(datos.nombre);
-					console.log( "La solicitud se ha completado correctamente." );
+			    	$('#myModal img').attr('src',datos.url);
+					$('#myModal h4').text(datos.nombre);	
+					$('#myModal h5').text(datos.descripcion);	
+					$('#myModal h3').text(datos.precio);
+
+					console.log( "La solicitud se ha completado ." );
 
 					//Mostar el modal
 					$('#myModal').modal('show');
 			    }
 		});
 	});
-})
-
+});

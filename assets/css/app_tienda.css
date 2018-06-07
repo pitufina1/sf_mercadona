@@ -21,20 +21,8 @@ header .navbar-nav a:last-child {
 	margin-right: 300px;
 }
 
-/*.container button {
-	font-family: Muli;
-	background-color: hsla(0,0%,100%,.3);
-	opacity: .9;
-	text-align: center;
-	font-weight: 400;
-	width: 146px;
-	height: 36px;
-	border-radius: 20px;
-	letter-spacing: .5px;
-	font-size: 1rem;border-radius: 150px;
-}
 
-*/
+
 .card-group button {
     color: #714000;
     border-radius: 100px;
@@ -50,6 +38,7 @@ header .navbar-nav a:last-child {
 
 .card-group .row .col-1-5 {
 	width: 20%;
+	min-height: 500px;
 }
 
 

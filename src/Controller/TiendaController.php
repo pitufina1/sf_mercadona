@@ -43,14 +43,15 @@ class TiendaController extends Controller
 
 
     /**
-     * @Route("/", name="tienda_categoria")
+     * @Route("/categoria", name="tienda_categoria")
      */
     public function listadoCategorias()
     {
         $repo = $this->getDoctrine()->getRepository(Categoria::class);
         $categorias = $repo->findAll();
-            return $this->render ('tienda/index.html.twig', [
+            return $this->render ('tienda/categoria.html.twig', [
             'categorias' =>  $categorias,
+            'productos' =>  $categorias[0]-> getProductos(),
         ]);
     }
 }

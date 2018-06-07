@@ -7,9 +7,15 @@ use App\Entity\Tienda;
 use App\Form\CategoriaType;
 use App\Repository\CategoriaRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\Serializer\Serializer;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 
 /**
  * @Route("/categoria")
@@ -88,4 +94,29 @@ class CategoriaController extends Controller
 
         return $this->redirectToRoute('categoria_index');
     }
+
+     /**
+     * @Route("/{id}/json", name="categoria_json", requirements={"id"="\d+"})
+     */
+    public function jsonCategoria($id, Request $request)
+    {
+        $encoder = new JsonEncoder();
+        $normalizer = new ObjectNormalizer();
+        $normalizer->setCircularReferenceHandler(
+            function ($object) {
+                return $object->getId();
+            }
+        );
+
+        $serializer = new Serializer(array($normalizer), array($encoder));
+
+        $repo = $this->getDoctrine()->getRepository(Categoria::class);
+        $categoria = $repo->find($id);
+        $jsonCategoria = $serializer->serialize($categoria, 'json');        
+
+        $respuesta = new Response($jsonCategoria);
+
+        return $respuesta;
+    }
+
 }

@@ -20,8 +20,6 @@ class CategoriaType extends AbstractType
                 'choice_label' => function ($producto) {
                     return $producto->getNombre();
             }))
-
-
         ;
     }
 

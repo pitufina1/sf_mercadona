@@ -1,0 +1,39 @@
+{% extends 'tienda/_base.html.twig' %}
+
+{% block body %}
+
+<div class="row"> 
+	<div class="col-3">
+	{% for categoria in categorias %}
+		
+			<button type="button" class="btn btn-light"><i class="fas fa-angle-down"></i>   {{categoria.nombre}}</button>
+		
+	{% endfor %}
+	
+</div>
+
+
+	<div class="col-9-4" width="20px">
+		<div class="card-group container">
+			{% for producto in productos %} 
+				<div class="card">
+					<input type="hidden" name="" value="{{ producto.id }}">
+					<img class="card-img-top" alt="" src="{{producto.url}}">
+					<div class="card-body">
+				      <p class="card-text"> {{producto.nombre}} </p>
+				      <p class="card-text"><small class="text-muted"> {{producto.descripcion}} </small></p>
+				      <p class="card-text"><small class="text-muted"><strong> {{producto.precio}} €</strong>/ud </small></p>
+							<hr> 
+						<button type="button" class="btn btn-outline-warning"> Añadir al carro </button>
+					</div>
+				</div>
+			{% endfor %}
+
+		</div>
+	</div>
+</div>
+
+
+
+
+{% endblock %}

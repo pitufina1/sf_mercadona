@@ -1,17 +1,29 @@
 
-
 <!-- Large modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
 
-<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+
+<div class="modal fade bd-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-      ...
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-6">
+              <img class="card-img-top" alt="" src="#">
+          </div>
+          <div class="col-6">
+            <h4 > Nombre </h4>
+            <h5 > Descripcion </h5>
+            <h3><b> Precio </b><b> € </b><text class="text-muted"> /ud. </h3>
+            <hr> 
+          <button type="button" class="btn btn-outline-warning"> Añadir al carro </button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-
+<!-- KITAR ESTA PARTE DEL MODAL -->
 <div class="modal" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -31,3 +43,4 @@
     </div>
   </div>
 </div>
+
