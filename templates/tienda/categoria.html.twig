@@ -2,18 +2,16 @@
 
 {% block body %}
 
-<div class="row"> 
-	<div class="col-3">
-	{% for categoria in categorias %}
-		
-			<button type="button" class="btn btn-light"><i class="fas fa-angle-down"></i>   {{categoria.nombre}}</button>
-		
-	{% endfor %}
-	
-</div>
+<div id="content">
+  <div id="left">
+	  	<ul>
+			{% for categoria in categorias %}
 
-
-	<div class="col-9-4" width="20px">
+				<li cat-id="{{ categoria.id }}"><i class="fas fa-chevron-right"></i><i class="icon category-icon category-icon-13"></i>  {{categoria.nombre}} </li><hr>
+			{% endfor %}
+		<ul>
+  </div>
+  <div id="right">
 		<div class="card-group container">
 			{% for producto in productos %} 
 				<div class="card">
@@ -30,10 +28,13 @@
 			{% endfor %}
 
 		</div>
-	</div>
+  </div>
 </div>
 
 
 
 
+
+
+{% include 'tienda/_modal.html.twig' %}
 {% endblock %}

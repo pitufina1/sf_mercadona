@@ -16,12 +16,24 @@
 
    		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
    			<div class="navbar-nav navbar-custom">
-     			<form class="form-inline" id="tienda" href="{{ path('recibir_formulario') }}" method="post">
+
+     			<!--<form class="form-inline" id="tienda" href="{{ path('recibir_formulario') }}" method="post">
             <div class="form-group-inline mx-sm-3 mb-2"> 
               <i class="fas fa-search"></i><input type="Buscar productos" class="form-control" id="inputPassword2" placeholder="Buscar productos" name="cp">
               <label for="inputPassword2" class="sr-only"><i class="fas fa-search"></i> Buscar productos </label>
             </div>
-          </form>
+          </form> -->
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
+
+                </div>
+                <input type="text" class="form-control" placeholder="Buscar productos" aria-label="Buscar productos" aria-describedby="basic-addon1">
+            </div>
+
+
+
           <a class="nav-item nav-link" href="{{ path('tienda_categoria') }}" method="post"> Categorías </a>
      			<a class="nav-item nav-link" href="#"> Mis Habituales </a>
    			</div>
