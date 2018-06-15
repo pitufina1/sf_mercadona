@@ -13,29 +13,23 @@
 
     <body>
 
-      {% block header %}
-      {% include '_base/header.html.twig' %}
+        {% block header %}
+            {% include '_base/header.html.twig' %}
 
-      <header>
+        <header>
+        </header>
 
-      </header>
-      {% endblock %}
+        {% endblock %}
 
         {% block body %}{% endblock %}
 
-          {% block footer %}
+        {% block footer %}
             {% include '_base/footer.html.twig' %}
-
-          {% endblock %}
-
-
-        
+        {% endblock %}
     
-    {% block javascripts %}
-      <script src="{{ asset('build/app.js') }}"></script>
-      
-
-{% endblock %}
+        {% block javascripts %}
+            <script src="{{ asset('build/app.js') }}"></script>
+        {% endblock %}
 
     </body>
 </html>

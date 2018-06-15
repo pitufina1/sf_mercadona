@@ -1,13 +1,15 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
-header>div.alert {
+/* HEADER PAGINA PRINCIPAL */
+
+header > div.alert {
 	margin-top: 20px;
 	text-align: center;
 	text-decoration: underline; 
 }
 
 header .navbar-nav a:first-child {
-	margin-left: 40px;
+	padding-left: 50px;
 }
 
 header .navbar-nav a {
@@ -18,9 +20,19 @@ header .navbar-nav a:last-child {
 	margin-right: 300px;
 }
 
+header nav img {
+	margin-left: 40px;
+}
+
+header nav {
+	margin-bottom: 15px;
+}
+
+
+/* BODY PAGINA PRINCIPAL */
+
 body {
 	font-family: Muli;
-	/*font-color: purple;*/
 }
 
 div.fondoimagen {
@@ -34,17 +46,16 @@ div.fondoimagen {
 
 .form-in-line {
 	text-align: right;
-
 }
 
-div.fondoimagen>h1{
-	padding-top: 100px;
+div.fondoimagen > h1 {
+	padding-top: 150px;
 	padding-right: 150px;
 	font-family: PT Serif;
 	font-weight: 600px;
 }
 
-form #img{
+#img {
 	padding-left: 800px;
 	padding-bottom: 100px;
 }
@@ -54,7 +65,7 @@ form #img{
 	margin-bottom: 100px;
 	margin-left: 70px;
 	margin-right: 90px;
-	/*border-radius: 0.1px;*/
+	border: none;
 }
 
 #info img {
@@ -72,23 +83,58 @@ div.card-group > div.card > div.card-body > a {  /*ESTO NO ME FUNCIONA */
 #over_map { 
 	position: absolute; top: 10px; left: 10px; z-index: 99; 
 	background-color:white;
-	width: 350px;
+	width: 400px;
 }
 
-#over_map button{
+/*#over_map button{
 	margin-left:200px;
+}*/
+
+#over_map h4,p {
+	padding: 25px;
 }
+
+
+/* FOOTER PAGINA PRINCIPAL */
 
 footer {
+
 background-color: #1c3037;
-color: white;
+color: #cdd1d3;
+text-align: left;
+
 }
 
-/*#info {
-  /*
+footer .row {
+	padding-top: 30px;
+	padding-bottom: 15px;
+	padding-left: 50px;
+	padding-right: 50px;
+}
 
+footer .cli img{
+	width: 175px;
+    height: 50px;
+}
 
-/*h1 {
-	font-weight :bold;
-	color: purple;
-}*/
+footer .cli i{
+    height: 50px;
+}
+footer h5 {
+	color: white;
+}
+
+footer .cli {
+	padding-left: 20px;
+}
+
+footer .row-inline {
+	text-decoration: underline;
+	font-size: 12px;
+}
+
+footer .row-inline > p{
+	display: inline-block;
+	text-decoration: none;
+	font-size: 12px;
+}

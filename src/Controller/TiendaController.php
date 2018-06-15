@@ -54,4 +54,7 @@ class TiendaController extends Controller
             'productos' =>  $categorias[0]-> getProductos(),
         ]);
     }
+
+    
+    
 }

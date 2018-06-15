@@ -1,7 +1,12 @@
 /*  HEADER PAGINA TIENDA */
 
 header nav i:last-child {
-	 padding-left: 300px;
+  margin-left: 100px;
+}
+
+header .nav .navbar-text {
+  padding-left: 80px;
+
 }
 
 header .navbar-nav a:first-child {
@@ -9,58 +14,45 @@ header .navbar-nav a:first-child {
 }
 
 header .navbar-nav a {
-    color: #229e6b;
+    color: #878787;
 }
 
 header .navbar-nav a:last-child {
-	margin-right:0px;
+	margin-right: 300px;
 }
 
 header  input {
    background-color: #f8f8f7;
+   border-radius: 25px;
 }
 
 
+/* BODY PAGINA TIENDA */
 
-/* BODY */
-.card-group li {
-    color: #714000;
-    border-radius: 100px;
-    line-height: 32px;
-    height: 32px;
-    border: 1px solid #fcb831;
-    font-size: inherit;
+.container .row {
+  margin-top: 30px;
+  margin-left: 25px;
+  margin-right: 25px;
 }
 
-.card-group li:hover {
-  background-color: rgba(252,184,49,.4);
-}
-
-.card-group .row .col-1-5 {
-	width: 20%;
-	min-height: 500px;
-}
-
-
-
-
-
-
-
-
-/*LIDIA*/
-header > nav > div:last-child{
-color: #878787;
-}
-
-.container > .row > .col:first-child{
-
+.container > .row > .col-md-4:first-child{
 	background: rgba(0, 0, 0, 0) linear-gradient(125deg, rgb(84, 128, 128), rgb(108, 180, 180)) repeat scroll 0% 0%;
+  border-radius: 8px 0 0 8px;
 }
 
+.container img {
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  width: 100%;
+  border-radius: 0 8px 8px 0;
+}
 
+.container .col-md-8 {
+  padding-left: 0px;
+}
 
-.container h1{
+.container h2{
 	color: white;
 	font-family: PT Serif;
 	font-size: 2.00rem;
@@ -69,8 +61,23 @@ color: #878787;
 	text-align: left;
 	letter-spacing: .3px;
 	box-sizing: border-box;
+  padding-top:40px;
+  padding-bottom: 30px;
 }
 
+.container button {
+  font-family: Muli;
+  background-color: hsla(0,0%,100%,.3);
+  opacity: .9;
+  text-align: center;
+  font-weight: 400;
+  width: 146px;
+  height: 36px;
+  border-radius: 20px;
+  letter-spacing: .5px;
+  font-size: 1rem;
+
+}
 .container li{
 	color: rgb(255, 255, 255);
 	box-sizing: border-box;
@@ -89,13 +96,104 @@ color: #878787;
 	font-size: 1rem;
 }
 
-/* /tienda/categoria */
+.container button:hover {
+  background-color: #8cb6b6;
+}
 
-/*.row .col-3 ol {
-	background-color: #f8f8f7;
-	padding-top: 10px;
-	padding-bottom: 10px;
-}*/
+h3 {
+  margin-top: 70px;
+  margin-left: 105px;
+  margin-bottom: 0px;
+  font-size: 1.15rem;
+}
+
+.card {
+  margin-right: 10px;
+  border-radius: 8px;
+  min-height: 400px;
+  /* width:18px;*/
+}
+
+.card:hover {
+  -webkit-box-shadow: 2px 2px 5px #999;
+}
+.card-group li {
+    background-color: transparent;
+    color: #714000;
+    border-radius: 100px;
+    line-height: 32px;
+    height: 32px;
+    border: 1px solid #fcb831;
+    font-size: inherit;
+    margin-top: 10px;
+}
+
+.card-group li:hover {
+    background-color: rgba(252,184,49,.4);
+}
+
+.card-group .row .col-1-5 {
+  width: 20%;
+}
+
+.card-group {
+  margin-top: 0px;
+  margin-bottom: 100px;
+  margin-left: 70px;
+  margin-right: 90px;
+  border: none;
+  }
+
+.card button {
+  line-height: 25px;
+  max-height: 32px;
+  color: #714000;
+  border-radius: 100px;
+  line-height: 15px;
+  height: 32px;
+  border: 1px solid #fcb831;
+  font-size: inherit;
+}
+
+.card button:hover {
+  background-color: rgba(252,184,49,.4);
+}
+
+
+/* MODAL */
+
+.modal .col-5:last-child {
+  background-color: #f8f8f7 ;
+  padding-top: 40px;
+  padding-left: 30px;
+}
+
+.modal button {
+  line-height: 25px;
+  max-height: 32px;
+  color: #714000;
+  border-radius: 100px;
+  background-color: #fcb831;
+  line-height: 15px;
+  height: 32px;
+  border: 1px solid #fcb831;
+  font-size: inherit;
+ }
+
+ .modal button:hover {
+  background-color: rgba(252,184,49,.4);
+}
+
+.modal p {
+  font-size:.60rem;
+}
+
+.modal p,h5 {
+  color: #b5b4b2;
+}
+
+
+/* CSS ~ /TIENDA/CATEGORIA */
 
 #content, html, body{
     height: 98%;
@@ -116,127 +214,70 @@ color: #878787;
 ul {
   	list-style-type: none;
   	background-color: #e6e6e6;
+    color: rgba(59,56,50,.4);
+    min-width: 16px;
+    font-size: 1rem;
 }
-
 
 li:first-child i.category-icon{
-
   background-image: url(https://tienda.mercadona.es/v1.1.1/static/media/category-icons.cd434998.svg);
-
   width: 28px;
-
   height: 28px;
-
   display: inline-table;
-
   margin-right: 8px;
-
   margin-left: 6px;
-
   background-position: -84px -28px;
-  /*background-position: -336px -28px;*/
-
-  }
-
-
-
- li:nth-child(2) i.category-icon{
-
-  background-image: url(https://tienda.mercadona.es/v1.1.1/static/media/category-icons.cd434998.svg);
-
-  width: 28px;
-
-  height: 28px;
-
-  display: inline-table;
-
-  margin-right: 8px;
-
-  margin-left: 6px;
-	    background-position: -308px -28px;
 }
-  /*background-position: -336px 0;*/
 
-
- li:nth-child(3) i.category-icon{
-
+li:nth-child(2) i.category-icon{
   background-image: url(https://tienda.mercadona.es/v1.1.1/static/media/category-icons.cd434998.svg);
-
   width: 28px;
-
   height: 28px;
-
   display: inline-table;
-
   margin-right: 8px;
-
   margin-left: 6px;
+	background-position: -308px -28px;
+}
 
-  background-position: -84px -28px;
-
-  }
-
-
+li:nth-child(3) i.category-icon{
+  background-image: url(https://tienda.mercadona.es/v1.1.1/static/media/category-icons.cd434998.svg);
+  width: 28px;
+  height: 28px;
+  display: inline-table;
+  margin-right: 8px;
+  margin-left: 6px;
+  background-position: -252px -28px;
+}
 
 li:nth-child(4) i.category-icon{
-
   background-image: url(https://tienda.mercadona.es/v1.1.1/static/media/category-icons.cd434998.svg);
-
   width: 28px;
-
   height: 28px;
-
   display: inline-table;
-
   margin-right: 8px;
-
   margin-left: 6px;
-
-  background-position: -308px -28px;
-
-  }
-
-
+  background-position: -224 -28px;
+}
 
 li:nth-child(5) i.category-icon{
-
   background-image: url(https://tienda.mercadona.es/v1.1.1/static/media/category-icons.cd434998.svg);
-
   width: 28px;
-
   height: 28px;
-
   display: inline-table;
-
   margin-right: 8px;
-
   margin-left: 6px;
-
-  background-position: -252px -28px;
-
-  }
-
-
+  background-position: -112 0px;
+}
 
 li:nth-child(6) i.category-icon{
-
   background-image: url(https://tienda.mercadona.es/v1.1.1/static/media/category-icons.cd434998.svg);
-
   width: 28px;
-
   height: 28px;
-
   display: inline-table;
-
   margin-right: 8px;
-
   margin-left: 6px;
-
-  background-position: -224px -28px;
-
-  }
-
-
+  background-position: -28px 0px;
+}
 
 li:nth-child(7) i.category-icon{
 

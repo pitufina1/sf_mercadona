@@ -3,18 +3,17 @@
 {% block body %}
 
 <div id="content">
-  <div id="left">
+  	<div id="left">
 	  	<ul>
 			{% for categoria in categorias %}
-
 				<li cat-id="{{ categoria.id }}"><i class="fas fa-chevron-right"></i><i class="icon category-icon category-icon-13"></i>  {{categoria.nombre}} </li><hr>
 			{% endfor %}
 		<ul>
-  </div>
-  <div id="right">
+  	</div>
+  	<div id="right">
 		<div class="card-group container">
 			{% for producto in productos %} 
-				<div class="card">
+				<div class="card" id="plantilla">
 					<input type="hidden" name="" value="{{ producto.id }}">
 					<img class="card-img-top" alt="" src="{{producto.url}}">
 					<div class="card-body">
@@ -28,13 +27,11 @@
 			{% endfor %}
 
 		</div>
-  </div>
+  	</div>
 </div>
 
 
+{% block javascripts %}<script src="{{ asset("build/categoria.js") }}"></script>{% endblock %}
 
-
-
-
-{% include 'tienda/_modal.html.twig' %}
+	{% include 'tienda/_modal.html.twig' %}
 {% endblock %}
