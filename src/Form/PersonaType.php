@@ -2,16 +2,12 @@
 
 namespace App\Form;
 
-use App\Entity\Cliente;
-
-use App\Entity\Pedido;
-use App\Entity\ClienteDireccion;
-
+use App\Entity\Persona;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class ClienteType extends AbstractType
+class PersonaType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -21,15 +17,14 @@ class ClienteType extends AbstractType
             ->add('email')
             ->add('contrasena')
             ->add('cp')
-            /*->add('pedidos')
-            ->add('clientesdireciones')*/
+            ->add('nif')
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Cliente::class,
+            'data_class' => Persona::class,
         ]);
     }
 }

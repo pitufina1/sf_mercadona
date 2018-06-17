@@ -2,6 +2,11 @@
 
 /* HEADER PAGINA PRINCIPAL */
 
+
+header {
+	 /*position: fixed;*/
+}
+
 header > div.alert {
 	margin-top: 20px;
 	text-align: center;
@@ -44,15 +49,15 @@ div.fondoimagen {
 	text-align: right;
 }
 
-.form-in-line {
+.form-inline {
 	text-align: right;
 }
 
 div.fondoimagen > h1 {
 	padding-top: 150px;
 	padding-right: 150px;
-	font-family: PT Serif;
-	font-weight: 600px;
+	/*font-family: PT Serif;
+	font-weight: 600px;*/
 }
 
 #img {
@@ -65,7 +70,7 @@ div.fondoimagen > h1 {
 	margin-bottom: 100px;
 	margin-left: 70px;
 	margin-right: 90px;
-	border: none;
+	border-radius: none;
 }
 
 #info img {
@@ -98,16 +103,14 @@ div.card-group > div.card > div.card-body > a {  /*ESTO NO ME FUNCIONA */
 /* FOOTER PAGINA PRINCIPAL */
 
 footer {
-
-background-color: #1c3037;
-color: #cdd1d3;
-text-align: left;
-
+	background-color: #1c3037;
+	color: #cdd1d3;
+	text-align: left;
 }
 
 footer .row {
 	padding-top: 30px;
-	padding-bottom: 15px;
+	padding-bottom: 0px;
 	padding-left: 50px;
 	padding-right: 50px;
 }
@@ -126,15 +129,16 @@ footer h5 {
 
 footer .cli {
 	padding-left: 20px;
+	list-style: none;
 }
 
 footer .row-inline {
-	text-decoration: underline;
+	/*text-decoration: underline;*/
 	font-size: 12px;
 }
 
-footer .row-inline > p{
+footer .row-inline p{
 	display: inline-block;
-	text-decoration: none;
+	text-decoration: underline;
 	font-size: 12px;
 }

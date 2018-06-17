@@ -3,7 +3,11 @@
 namespace App\Controller;
 
 use App\Entity\Cliente;
+use App\Entity\Empresa;
+use App\Entity\Persona;
 use App\Form\ClienteType;
+use App\Form\EmpresaType;
+use App\Form\PersonaType;
 use App\Repository\ClienteRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -28,8 +32,22 @@ class ClienteController extends Controller
      */
     public function new(Request $request): Response
     {
-        $cliente = new Cliente();
-        $form = $this->createForm(ClienteType::class, $cliente);
+        /*$cliente = new Cliente();*/
+
+        $tipo = $request->query->get('tipo');
+        dump($tipo);
+
+        if ($tipo == 'E'){
+            $cliente = new Empresa();
+            $form = $this->createForm(EmpresaType::class, $cliente);
+        }else if ($tipo == 'P'){
+            $cliente = new Persona();
+            $form = $this->createForm(PersonaType::class, $cliente);
+        }else{
+            $cliente = new Cliente();
+            $form = $this->createForm(ClienteType::class, $cliente);
+        }
+
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
